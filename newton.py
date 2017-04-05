@@ -20,3 +20,13 @@ for top in range(10):
     for btm in range(10):
         print(newton_binomial(top, btm), end="\t")
     print("\n")
+
+
+def sum_of_binomials(number, include_zero=False):
+    result = 0
+    for each in range(1, number+1, 1):
+        result += newton_binomial(number, each)
+    if include_zero: return int(result+1)
+    else: return int(result)
+
+print(sum_of_binomials(5))
